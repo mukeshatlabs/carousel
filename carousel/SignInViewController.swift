@@ -76,7 +76,6 @@ class SignInViewController: UIViewController {
         activityIndicator.startAnimating()
         
         if email.text == "m" && password.text == "p" {
-            print("inside m and p")
             delay(2, closure: { () -> () in
                 self.performSegueWithIdentifier("tutorialSegue", sender: nil)
                 self.activityIndicator.stopAnimating()
@@ -86,7 +85,6 @@ class SignInViewController: UIViewController {
             
             
         } else {
-            print("in the error block")
             delay(2, closure: { () -> () in
                 
                 
