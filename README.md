@@ -1,8 +1,8 @@
 # carousel
 
-[X]Static photo tiles on the initial screen
-[]Optional: Photo tiles move with scrolling
-Sign In
+- [X] Static photo tiles on the initial screen
+- [] Optional: Photo tiles move with scrolling
+- [X] Sign In
 Tapping on email/password reveals the keyboard and shifts the scrollview and Sign In button up.
 Upon tapping the Sign In button.
 If the username or password fields are empty, user sees an error alert.
