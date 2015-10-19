@@ -25,7 +25,31 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBOutlet weak var signOut: UIButton!
 
+    @IBAction func signOut(sender: AnyObject) {
+    
+        let alertController = UIAlertController(title: "", message: "Are you sure you want to sign out?", preferredStyle: .ActionSheet)
+        
+        let logoutAction = UIAlertAction(title: "Sign Out", style: .Destructive) { (action) in
+            self.performSegueWithIdentifier("signinSegue", sender: nil)
+            // handle case of user logging out
+        }
+        // add the logout action to the alert controller
+        alertController.addAction(logoutAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            // handle case of user canceling. Doing nothing will dismiss the view.
+        }
+        // add the cancel action to the alert controller
+        alertController.addAction(cancelAction)
+        
+        presentViewController(alertController, animated: true) {
+            // optional code for what happens after the alert controller has finished presenting
+        }
+        
+    
+    }
     @IBAction func dismissSettings(sender: AnyObject) {
         
         dismissViewControllerAnimated(true, completion: nil)

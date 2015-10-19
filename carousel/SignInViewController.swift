@@ -84,7 +84,7 @@ class SignInViewController: UIViewController {
             
         } else {
             delay(2, closure: { () -> () in
-                var alert = UIAlertView(title: "Access Denied", message: "Wrong username or password", delegate: self, cancelButtonTitle: "OK")
+                let alert = UIAlertView(title: "Access Denied", message: "Wrong username or password", delegate: self, cancelButtonTitle: "OK")
                 alert.show()
                 self.activityIndicator.stopAnimating()
             })

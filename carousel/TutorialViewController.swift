@@ -12,12 +12,17 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var tutorialScrollView: UIScrollView!
+    
+    @IBOutlet weak var spingImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tutorialScrollView.contentSize = CGSize(width: 1300, height: 568)
         
         tutorialScrollView.delegate = self
+        
+        spingImage.alpha = 0
 
         // Do any additional setup after loading the view.
     }
@@ -47,6 +52,17 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
         
         // Set the current page, so the dots will update
         pageControl.currentPage = page
+        
+        if page == 3 {
+            pageControl.hidden = true
+            spingImage.alpha = 1
+            
+        }
+        else {
+            pageControl.hidden = false
+            spingImage.alpha = 0
+        }
+        
         // This method is called when the scrollview finally stops scrolling.
     }
     
