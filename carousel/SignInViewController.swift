@@ -27,6 +27,8 @@ class SignInViewController: UIViewController {
         initialOffset = scrollView.contentOffset.y
         buttonX = button.center.x
         buttonY = button.center.y
+        email.text = ""
+        password.text = ""
 
         // Do any additional setup after loading the view.
         
@@ -73,7 +75,8 @@ class SignInViewController: UIViewController {
     @IBAction func signIn(sender: AnyObject) {
         activityIndicator.startAnimating()
         
-        if email.text == "" && password.text == "" {
+        if email.text == "m" && password.text == "p" {
+            print("inside m and p")
             delay(2, closure: { () -> () in
                 self.performSegueWithIdentifier("tutorialSegue", sender: nil)
                 self.activityIndicator.stopAnimating()
@@ -83,9 +86,23 @@ class SignInViewController: UIViewController {
             
             
         } else {
+            print("in the error block")
             delay(2, closure: { () -> () in
-                let alert = UIAlertView(title: "Access Denied", message: "Wrong username or password", delegate: self, cancelButtonTitle: "OK")
-                alert.show()
+                
+                
+                let alertController = UIAlertController(title: "Access Denied", message: "Wrong username or password", preferredStyle: .Alert)
+                
+                // create a cancel action
+                let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+                    // handle cancel response here. Doing nothing will dismiss the view.
+                }
+                // add the cancel action to the alertController
+                alertController.addAction(cancelAction)
+                
+                
+                self.presentViewController(alertController, animated: true){}
+
+                
                 self.activityIndicator.stopAnimating()
             })
             
