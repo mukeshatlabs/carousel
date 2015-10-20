@@ -83,30 +83,18 @@ class SignInViewController: UIViewController {
                 self.password.text = ""
             })
             
-            
         } else {
             delay(2, closure: { () -> () in
-                
-                
                 let alertController = UIAlertController(title: "Access Denied", message: "Wrong username or password", preferredStyle: .Alert)
                 
                 // create a cancel action
                 let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-                    // handle cancel response here. Doing nothing will dismiss the view.
                 }
-                // add the cancel action to the alertController
                 alertController.addAction(cancelAction)
-                
-                
                 self.presentViewController(alertController, animated: true){}
-
-                
                 self.activityIndicator.stopAnimating()
             })
-            
         }
-
-        
     }
     /*
     // MARK: - Navigation
