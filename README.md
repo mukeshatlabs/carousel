@@ -37,3 +37,5 @@
 - [ ] Share a photo
 - [ ] Optional: Upon completion of the events, mark them green.
 - [ ] Optional: When all events are completed, dismiss the banner.
+- 
+![Video Walkthrough](carousel.gif)
